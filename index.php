@@ -1,6 +1,6 @@
 <?php
 include_once("./main.php");
-$parking= !empty($hotels["parking"]) ? "SI": "NO";
+
 
 ?>
 
@@ -13,17 +13,43 @@ $parking= !empty($hotels["parking"]) ? "SI": "NO";
     <title>PHP Hotels</title>
 </head>
 <body>
-  <ul>  
-   <?php foreach($hotels as $hotel):?>
-    <li><b>nome:</b><?=$hotel["name"]?></li>
-    <li><b>descrizione:</b><?=$hotel["description"]?></li>
-    <li><b>parcheggio:</b><?=$parking?></li>
-    <li><b>voto:</b><?=$hotel["vote"]?></li>
-    <li><b>distanza dal centro:</b><?=$hotel["distance_to_center"]?></li>
-    <hr>
+ <table class="table">
+  <thead>  
+   <tr>
+    <th scope= "col">Nome</th>
+    <th scope= "col">Descrizione</th>
+    <th scope= "col">Parcheggio</th>
+    <th scope= "col">Voto</th>
+    <th scope= "col">Distanza dal centro</th>  
+   </tr> 
+  </thead> 
+  <tbody>
+    <?php foreach($hotels as $hotel):?> 
+    <tr>
+     <td><?php echo $hotel["name"]?></td>
+     <td><?php echo$hotel["description"]?></td>
+     <td><?php
+    $parking= $hotel["parking"];
+    if ($parking == true){
+        echo "SI";
+    } else {
+        echo "NO";
+    }
+    ?></td>
+     <td><?php echo $hotel["vote"]?></td>
+     <td><?php echo $hotel["distance_to_center"]?></td>   
+    </tr>
+    <?php endforeach;?>
     
-   <?php endforeach;?>
-  </ul>  
+    
+    
+    
+    
+    
+    
+   
+ </tbody> 
+</table>  
     
 </body>
 </html>
