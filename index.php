@@ -1,5 +1,7 @@
 <?php
-require_once("./main.php");
+include_once("./main.php");
+$parking= !empty($hotels["parking"]) ? "SI": "NO";
+
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +17,12 @@ require_once("./main.php");
    <?php foreach($hotels as $hotel):?>
     <li><b>nome:</b><?=$hotel["name"]?></li>
     <li><b>descrizione:</b><?=$hotel["description"]?></li>
-    <li><b>parcheggio:</b><?=$hotel["parking"]?></li>
+    <li><b>parcheggio:</b><?=$parking?></li>
     <li><b>voto:</b><?=$hotel["vote"]?></li>
     <li><b>distanza dal centro:</b><?=$hotel["distance_to_center"]?></li>
+    <hr>
     
-   <?php endforeach();?>
+   <?php endforeach;?>
   </ul>  
     
 </body>
