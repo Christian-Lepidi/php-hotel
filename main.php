@@ -42,9 +42,11 @@
 
 
     $filter_parking = isset($_GET["check-parking"]) ? true:false;
+    if($filter_parking == true){
+        $hotels = array_filter($hotels,function($hotel,$index){
+            return $hotel["parking"] == true;
+        },ARRAY_FILTER_USE_BOTH);
+    }
     
-    //array_filter($hotels,function($hotel,$index){
-        //return $hotel["parking"] == true;
-    //},ARRAY_FILTER_USE_BOTH);
     
 ?>
