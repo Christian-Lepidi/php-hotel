@@ -13,6 +13,13 @@ include_once("./main.php");
     <title>PHP Hotels</title>
 </head>
 <body>
+ <form method="GET" class="ms-2 mt-2">
+ <input class="form-check-input" type="checkbox" name="check-parking" id="check-parking">
+  <label class="form-check-label" for="check-parking">
+    Cerca hotel con parcheggio
+  </label>
+  <button class="btn btn-primary">Filtra</button>
+ </form>   
  <table class="table">
   <thead>  
    <tr>

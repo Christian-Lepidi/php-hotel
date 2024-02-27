@@ -40,4 +40,10 @@
 
     ];
 
+    $filter_parking = isset($GET["check-parking"]) ? true : false;
+    var_dump($filter_parking);
+    array_filter($hotels,function($hotel,$index){
+        return $hotel["parking"] == true;
+    },ARRAY_FILTER_USE_BOTH);
+    
 ?>
