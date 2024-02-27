@@ -20,6 +20,10 @@ include_once("./main.php");
   <label class="form-check-label" for="check-parking">
     Cerca hotel con parcheggio
   </label>
+  <div class="mb-3">
+    <label for="filter-vote" class="form-label">Voto</label>
+    <input type="number" name="filter-vote" class="form-control" id="filter-vote" min="1" max="5">
+    <div  class="form-text"></div>
   <button class="btn btn-primary">Filtra</button>
  </form>   
  <table class="table">
