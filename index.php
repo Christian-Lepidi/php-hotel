@@ -13,8 +13,10 @@ include_once("./main.php");
     <title>PHP Hotels</title>
 </head>
 <body>
- <form method="GET" class="ms-2 mt-2">
- <input class="form-check-input" type="checkbox" name="check-parking" id="check-parking">
+ <form method="GET" action="index.php" class="ms-2 mt-2">
+ <input class="form-check-input" type="checkbox" name="check-parking" id="check-parking" <?php echo $filter_parking ? "checked":""?>
+ >
+ 
   <label class="form-check-label" for="check-parking">
     Cerca hotel con parcheggio
   </label>
